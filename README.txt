@@ -1,16 +1,12 @@
-LAURA RODRIGUEZ - LANDING PREMIUM
+LAURA RODRIGUEZ — LANDING + DIAGNÓSTICO
 
-Archivos que debes subir al repositorio laurarodriguez-growth.github.io:
+Archivos para subir directamente a la raíz del repositorio:
+- index.html
+- diagnostico.html
+- laura-rodriguez-profile.webp
+- laura-rodriguez-profile.jpg
+- og-image.jpg
+- README.txt
 
-1. index.html
-2. laura-rodriguez-profile.webp
-3. laura-rodriguez-profile.jpg
-4. og-image.jpg
-
-En GitHub:
-Add file > Upload files > arrastra los 4 archivos > Commit changes.
-
-Puedes reemplazar index.html y agregar las imágenes nuevas. Los archivos antiguos que no usa esta versión pueden quedarse; no afectan la página.
-
-Sitio:
-https://laurarodriguez-growth.github.io/
+El formulario no requiere base de datos ni suscripción.
+Al finalizar, prepara las respuestas y abre WhatsApp con el diagnóstico listo para enviar a Laura.
