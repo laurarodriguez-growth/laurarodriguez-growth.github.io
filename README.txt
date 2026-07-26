@@ -1,16 +1,16 @@
-LAURA RODRIGUEZ — LANDING PAGE
+LAURA RODRIGUEZ - LANDING PREMIUM
 
-Para actualizar tu web en GitHub Pages:
-1. Entra al repositorio laurarodriguez-growth.github.io
-2. Abre el archivo index.html
-3. Pulsa el icono del lápiz o reemplaza el archivo mediante Add file > Upload files
-4. Sube index.html y las dos imágenes en la raíz del repositorio
-5. Confirma con Commit changes
+Archivos que debes subir al repositorio laurarodriguez-growth.github.io:
 
-Archivos necesarios:
-- index.html
-- automation-hero.png
-- laura-rodriguez-profile.png
+1. index.html
+2. laura-rodriguez-profile.webp
+3. laura-rodriguez-profile.jpg
+4. og-image.jpg
 
-URL pública:
+En GitHub:
+Add file > Upload files > arrastra los 4 archivos > Commit changes.
+
+Puedes reemplazar index.html y agregar las imágenes nuevas. Los archivos antiguos que no usa esta versión pueden quedarse; no afectan la página.
+
+Sitio:
 https://laurarodriguez-growth.github.io/
