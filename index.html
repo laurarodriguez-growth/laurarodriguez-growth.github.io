@@ -1,870 +1,221 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Laura Rodriguez ayuda a empresas de servicios a convertir más consultas en clientes con estrategia, inteligencia artificial, automatización y marketing." />
-  <meta name="theme-color" content="#6c3ce7" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Laura Rodriguez ayuda a empresas de servicios a convertir más conversaciones en clientes mediante estrategia, inteligencia artificial y automatización.">
+  <meta name="theme-color" content="#7251ff">
+  <meta property="og:title" content="Laura Rodriguez | Growth Strategist">
+  <meta property="og:description" content="Convierte más conversaciones en clientes.">
+  <meta property="og:type" content="website">
   <title>Laura Rodriguez | Growth Strategist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
-    (function () {
-      const savedTheme = localStorage.getItem('lr-theme');
-      if (savedTheme === 'light' || savedTheme === 'dark') {
-        document.documentElement.dataset.theme = savedTheme;
-      }
+    (() => {
+      const saved = localStorage.getItem('lr-theme');
+      if (saved) document.documentElement.dataset.theme = saved;
     })();
   </script>
   <style>
-    :root {
-      color-scheme: light;
-      --bg: #ffffff;
-      --surface: #f5f4f7;
-      --surface-raised: #ffffff;
-      --text: #131216;
-      --muted: #66616d;
-      --line: #ddd9e2;
-      --accent: #6c3ce7;
-      --accent-hover: #5930c7;
-      --accent-soft: #eee8ff;
-      --nav-bg: rgba(255, 255, 255, 0.88);
-      --inverse-bg: #111014;
-      --inverse-card: #1a181e;
-      --inverse-line: #35313b;
-      --inverse-text: #ffffff;
-      --inverse-muted: #b8b2bf;
-      --radius: 22px;
-      --shadow: 0 22px 70px rgba(30, 19, 54, 0.1);
+    :root{
+      color-scheme:light;
+      --bg:#fbfbfd;--surface:#fff;--surface-2:#f3f1f8;--text:#111015;--muted:#696471;
+      --line:#e2dee8;--accent:#7251ff;--accent-2:#9d86ff;--accent-soft:#eeeaff;
+      --nav:rgba(251,251,253,.82);--shadow:0 28px 90px rgba(36,24,77,.12);
+      --radius:28px;--max:1180px;
     }
-
-    :root[data-theme="dark"] {
-      color-scheme: dark;
-      --bg: #0c0b0f;
-      --surface: #141217;
-      --surface-raised: #19171d;
-      --text: #f6f3fa;
-      --muted: #aaa4b2;
-      --line: #302c35;
-      --accent: #9569ff;
-      --accent-hover: #a984ff;
-      --accent-soft: #231a38;
-      --nav-bg: rgba(12, 11, 15, 0.88);
-      --inverse-bg: #151219;
-      --inverse-card: #1d1922;
-      --inverse-line: #3b3444;
-      --inverse-text: #ffffff;
-      --inverse-muted: #bdb6c5;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+    :root[data-theme="dark"]{
+      color-scheme:dark;
+      --bg:#0b0a0e;--surface:#121116;--surface-2:#18161d;--text:#f8f6fb;--muted:#aaa4b2;
+      --line:#2c2932;--accent:#987cff;--accent-2:#b5a5ff;--accent-soft:#211a39;
+      --nav:rgba(11,10,14,.82);--shadow:0 30px 100px rgba(0,0,0,.45);
     }
-
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        color-scheme: dark;
-        --bg: #0c0b0f;
-        --surface: #141217;
-        --surface-raised: #19171d;
-        --text: #f6f3fa;
-        --muted: #aaa4b2;
-        --line: #302c35;
-        --accent: #9569ff;
-        --accent-hover: #a984ff;
-        --accent-soft: #231a38;
-        --nav-bg: rgba(12, 11, 15, 0.88);
-        --inverse-bg: #151219;
-        --inverse-card: #1d1922;
-        --inverse-line: #3b3444;
-        --inverse-text: #ffffff;
-        --inverse-muted: #bdb6c5;
-        --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
-      }
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
-      transition: background-color .25s ease, color .25s ease;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    button, input, textarea { font: inherit; }
-    img { max-width: 100%; }
-
-    .container {
-      width: min(1120px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      background: var(--nav-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid color-mix(in srgb, var(--line) 75%, transparent);
-    }
-
-    .nav-inner {
-      min-height: 74px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-    }
-
-    .brand {
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      font-size: 1.15rem;
-      white-space: nowrap;
-    }
-
-    .brand span { color: var(--accent); }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 24px;
-      font-size: .9rem;
-      color: var(--muted);
-    }
-
-    .nav-links > a:not(.btn):hover { color: var(--text); }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .theme-toggle {
-      width: 44px;
-      height: 44px;
-      display: inline-grid;
-      place-items: center;
-      padding: 0;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--surface-raised);
-      color: var(--text);
-      cursor: pointer;
-      transition: transform .2s ease, border-color .2s ease;
-    }
-
-    .theme-toggle:hover {
-      transform: translateY(-2px);
-      border-color: var(--accent);
-    }
-
-    .theme-toggle svg { width: 19px; height: 19px; }
-    .icon-sun { display: none; }
-    :root[data-theme="dark"] .icon-moon { display: none; }
-    :root[data-theme="dark"] .icon-sun { display: block; }
-
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) .icon-moon { display: none; }
-      :root:not([data-theme="light"]) .icon-sun { display: block; }
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 0 22px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-weight: 700;
-      line-height: 1.15;
-      text-align: center;
-      transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #ffffff;
-      box-shadow: 0 14px 34px color-mix(in srgb, var(--accent) 24%, transparent);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      background: var(--accent-hover);
-    }
-
-    .btn-secondary {
-      border-color: var(--line);
-      background: var(--surface-raised);
-      color: var(--text);
-    }
-
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-      border-color: var(--accent);
-    }
-
-    .hero {
-      padding: 96px 0 88px;
-      overflow: hidden;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 56px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      font-size: .8rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 34px;
-      height: 2px;
-      background: var(--accent);
-    }
-
-    h1 {
-      margin: 20px 0 24px;
-      max-width: 760px;
-      font-size: clamp(3.2rem, 7vw, 6.3rem);
-      line-height: .94;
-      letter-spacing: -0.075em;
-    }
-
-    .hero-copy {
-      max-width: 690px;
-      font-size: clamp(1.08rem, 2vw, 1.3rem);
-      color: var(--muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 34px;
-    }
-
-    .hero-detail {
-      max-width: 680px;
-      margin: 26px 0 0;
-      padding-left: 18px;
-      border-left: 3px solid var(--accent);
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    .automation-card {
-      position: relative;
-      min-height: 590px;
-      border-radius: 36px;
-      overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(6, 5, 8, .08) 0%, rgba(6, 5, 8, .2) 46%, rgba(6, 5, 8, .92) 100%),
-        url("automation-hero.png") center / cover no-repeat;
-      box-shadow: var(--shadow);
-      isolation: isolate;
-    }
-
-    .automation-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border: 1px solid rgba(255, 255, 255, .16);
-      border-radius: inherit;
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    .automation-card::after {
-      content: "";
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      right: -80px;
-      top: -80px;
-      border-radius: 50%;
-      background: color-mix(in srgb, var(--accent) 35%, transparent);
-      filter: blur(70px);
-      opacity: .75;
-      z-index: 0;
-    }
-
-    .automation-label {
-      position: absolute;
-      top: 24px;
-      left: 24px;
-      z-index: 3;
-      padding: 9px 13px;
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 999px;
-      background: rgba(10, 9, 12, .58);
-      backdrop-filter: blur(12px);
-      color: rgba(255,255,255,.86);
-      font-size: .76rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .flow-panel {
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 24px;
-      z-index: 3;
-      padding: 24px;
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 24px;
-      background: rgba(12, 10, 15, .73);
-      backdrop-filter: blur(18px);
-      color: #ffffff;
-    }
-
-    .flow-panel small {
-      display: block;
-      margin-bottom: 16px;
-      color: rgba(255,255,255,.62);
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .flow-steps {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .flow-step {
-      padding: 8px 11px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.14);
-      font-size: .78rem;
-      font-weight: 700;
-    }
-
-    .flow-arrow { color: #a986ff; font-weight: 800; }
-
-    section { padding: 92px 0; }
-
-    .section-kicker {
-      color: var(--accent);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .11em;
-      font-size: .78rem;
-    }
-
-    .section-title {
-      margin: 12px 0 18px;
-      font-size: clamp(2.1rem, 5vw, 4rem);
-      letter-spacing: -.06em;
-      line-height: 1;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
-
-    .problems {
-      background: var(--inverse-bg);
-      color: var(--inverse-text);
-    }
-
-    .problems .section-intro { color: var(--inverse-muted); }
-
-    .problem-grid {
-      margin-top: 48px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .problem-card {
-      border: 1px solid var(--inverse-line);
-      border-radius: var(--radius);
-      padding: 28px;
-      background: var(--inverse-card);
-    }
-
-    .problem-card span {
-      display: block;
-      color: #a986ff;
-      font-size: .8rem;
-      font-weight: 800;
-      margin-bottom: 28px;
-    }
-
-    .problem-card h3 { margin: 0 0 10px; font-size: 1.3rem; }
-    .problem-card p { margin: 0; color: var(--inverse-muted); }
-
-    .services-grid {
-      margin-top: 48px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .service-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 30px;
-      background: var(--surface-raised);
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-      border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
-    }
-
-    .service-card small { color: var(--accent); font-weight: 800; }
-    .service-card h3 { font-size: 1.45rem; margin: 14px 0 10px; }
-    .service-card p { color: var(--muted); margin: 0; }
-
-    .process-wrap {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 36px;
-      padding: 54px;
-    }
-
-    .process-grid {
-      margin-top: 42px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .step { border-top: 2px solid var(--text); padding-top: 20px; }
-    .step b { color: var(--accent); }
-    .step h3 { margin: 12px 0 8px; }
-    .step p { margin: 0; color: var(--muted); font-size: .94rem; }
-
-    .offer {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .offer-card {
-      border-radius: 32px;
-      background: var(--inverse-bg);
-      color: var(--inverse-text);
-      padding: 42px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 1px solid var(--inverse-line);
-    }
-
-    .offer-card .tag { color: #ae90ff; font-weight: 800; }
-    .offer-card h3 { font-size: 2.4rem; line-height: 1; letter-spacing: -.06em; margin: 15px 0; }
-    .offer-card p { color: var(--inverse-muted); }
-    .offer-list { display: grid; gap: 12px; margin: 28px 0; }
-    .offer-list div::before { content: "✓"; color: #ae90ff; margin-right: 10px; font-weight: 800; }
-    .offer-card .btn { width: 100%; }
-
-    .about-card {
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      padding: 18px;
-      overflow: hidden;
-      background: var(--surface-raised);
-    }
-
-    .about-photo {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      object-position: center 28%;
-      border-radius: 22px;
-      display: block;
-      margin-bottom: 28px;
-    }
-
-    .about-content { padding: 0 24px 22px; }
-    .about-card h3 { margin: 0 0 18px; font-size: 2rem; letter-spacing: -.05em; }
-    .about-card p { color: var(--muted); }
-
-    .about-links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .about-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      min-height: 42px;
-      padding: 0 15px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--surface);
-      font-size: .86rem;
-      font-weight: 700;
-      transition: border-color .2s ease, transform .2s ease;
-    }
-
-    .about-link:hover {
-      transform: translateY(-2px);
-      border-color: var(--accent);
-    }
-
-    .about-link svg { width: 17px; height: 17px; }
-
-    .contact { padding-bottom: 110px; }
-
-    .contact-box {
-      border-radius: 36px;
-      background: var(--accent);
-      color: #ffffff;
-      padding: 58px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 30px;
-      align-items: center;
-      box-shadow: 0 20px 55px color-mix(in srgb, var(--accent) 25%, transparent);
-    }
-
-    .contact-box h2 {
-      margin: 0 0 12px;
-      font-size: clamp(2.2rem, 5vw, 4.5rem);
-      line-height: .96;
-      letter-spacing: -.07em;
-    }
-
-    .contact-box p {
-      max-width: 650px;
-      margin: 0;
-      color: rgba(255,255,255,.84);
-    }
-
-    .contact-box .btn {
-      background: #ffffff;
-      color: #151219;
-      white-space: nowrap;
-      box-shadow: none;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 0;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
-    .footer-links a:hover { color: var(--accent); }
-
-    @media (max-width: 960px) {
-      .hero-grid, .offer { grid-template-columns: 1fr; }
-      .automation-card { min-height: 560px; }
-      .problem-grid { grid-template-columns: 1fr; }
-      .process-grid { grid-template-columns: repeat(2, 1fr); }
-      .contact-box { grid-template-columns: 1fr; }
-      .offer { gap: 20px; }
-    }
-
-    @media (max-width: 720px) {
-      .container { width: min(100% - 28px, 1120px); }
-      .nav-links > a:not(.btn) { display: none; }
-      .nav-links { gap: 10px; }
-      .nav .btn { min-height: 44px; padding: 0 15px; font-size: .8rem; }
-      .hero { padding-top: 68px; }
-      h1 { font-size: clamp(3.1rem, 15vw, 4.6rem); }
-      .services-grid, .process-grid { grid-template-columns: 1fr; }
-      .process-wrap, .contact-box, .offer-card { padding: 30px; border-radius: 24px; }
-      .about-card { border-radius: 24px; }
-      .automation-card { min-height: 510px; border-radius: 26px; }
-      .flow-panel { left: 16px; right: 16px; bottom: 16px; padding: 18px; }
-      .automation-label { top: 16px; left: 16px; }
-      section { padding: 76px 0; }
-      .contact { padding-bottom: 80px; }
-    }
-
-    @media (max-width: 480px) {
-      .brand { font-size: 1rem; }
-      .nav .btn { display: none; }
-      .hero-actions .btn { width: 100%; }
-      .automation-card { min-height: 450px; background-position: 47% center; }
-      .flow-arrow { display: none; }
-      .flow-steps { gap: 6px; }
-      .flow-step { font-size: .72rem; }
-      .about-photo { aspect-ratio: 4 / 5; object-position: center 20%; }
-      .footer-inner { align-items: flex-start; flex-direction: column; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition: none !important; }
-    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+    a{color:inherit;text-decoration:none} img{display:block;max-width:100%} button{font:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .nav{position:fixed;inset:0 0 auto;z-index:50;background:var(--nav);backdrop-filter:blur(18px);border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:800;letter-spacing:-.045em;font-size:1.08rem}.brand i{font-style:normal;color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:.9rem}.nav-links a:hover{color:var(--text)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .theme{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer;display:grid;place-items:center}.theme svg{width:18px}.sun{display:none}:root[data-theme="dark"] .moon{display:none}:root[data-theme="dark"] .sun{display:block}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 23px;border-radius:999px;font-weight:700;border:1px solid transparent;transition:.22s ease;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white;box-shadow:0 16px 36px color-mix(in srgb,var(--accent) 25%,transparent)}.btn-primary:hover{transform:translateY(-2px);filter:brightness(1.05)}
+    .btn-outline{background:var(--surface);border-color:var(--line)}.btn-outline:hover{transform:translateY(-2px);border-color:var(--accent)}
+    .nav .btn{min-height:42px;padding:0 17px;font-size:.86rem}
+    .hero{min-height:100svh;padding:132px 0 72px;display:grid;align-items:center;position:relative}
+    .hero:before{content:"";position:absolute;width:650px;height:650px;right:-260px;top:40px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 18%,transparent),transparent 68%);pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
+    .kicker{display:inline-flex;align-items:center;gap:10px;color:var(--muted);font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase}.kicker:before{content:"";width:30px;height:2px;background:var(--accent)}
+    h1{font-size:clamp(3.3rem,7.2vw,7rem);line-height:.91;letter-spacing:-.078em;margin:22px 0 26px;max-width:760px}
+    h1 span{color:var(--accent)}
+    .lead{font-size:clamp(1.08rem,1.7vw,1.28rem);color:var(--muted);max-width:690px;margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:34px}
+    .micro{margin-top:19px;color:var(--muted);font-size:.84rem}
+    .visual{position:relative;min-height:590px;border-radius:36px;overflow:hidden;background:#100d18;box-shadow:var(--shadow);isolation:isolate}
+    .visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
+    .visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,5,10,.04),rgba(7,5,10,.16) 52%,rgba(7,5,10,.9));}
+    .visual-tag{position:absolute;z-index:2;top:23px;left:23px;padding:9px 13px;border-radius:999px;color:#fff;background:rgba(12,9,17,.56);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(12px);font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .visual-copy{position:absolute;z-index:2;left:28px;right:28px;bottom:27px;color:white}.visual-copy strong{display:block;font-size:clamp(1.55rem,2.5vw,2.3rem);line-height:1.08;letter-spacing:-.045em;max-width:390px}.visual-copy small{display:block;color:rgba(255,255,255,.67);margin-top:11px}
+    .section{padding:118px 0}.section-tight{padding:86px 0}
+    .statement{background:#0d0b12;color:#fff;position:relative;overflow:hidden}.statement:after{content:"";position:absolute;width:420px;height:420px;right:-140px;bottom:-180px;border-radius:50%;background:var(--accent);filter:blur(120px);opacity:.22}
+    .statement-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px;align-items:start;position:relative;z-index:1}
+    .label{color:var(--accent-2);font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    .statement h2,.section h2{margin:0;letter-spacing:-.06em;line-height:1.02;font-size:clamp(2.65rem,5vw,5.1rem)}
+    .statement p{margin:24px 0 0;color:#bcb5c6;font-size:1.12rem;max-width:710px}
+    .loss-grid{margin-top:58px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .loss-card{padding:29px;border:1px solid rgba(255,255,255,.12);border-radius:24px;background:rgba(255,255,255,.035)}.loss-card b{font-size:1.06rem}.loss-card p{font-size:.94rem;margin:10px 0 0}
+    .intro{max-width:780px}.intro p{color:var(--muted);font-size:1.08rem;margin:22px 0 0}
+    .results{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:54px}
+    .result{min-height:230px;padding:34px;border-radius:26px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;justify-content:space-between;transition:.25s ease}.result:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .num{color:var(--accent);font-weight:800;font-size:.8rem;letter-spacing:.1em}.result h3{font-size:clamp(1.45rem,2.3vw,2.05rem);line-height:1.08;letter-spacing:-.045em;margin:28px 0 10px}.result p{margin:0;color:var(--muted)}
+    .process{background:var(--surface-2)}
+    .steps{margin-top:54px;border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:90px 1fr 1fr;gap:34px;padding:32px 0;border-bottom:1px solid var(--line);align-items:start}.step-no{font-weight:800;color:var(--accent)}.step h3{margin:0;font-size:1.35rem;letter-spacing:-.035em}.step p{margin:0;color:var(--muted)}
+    .about-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:72px;align-items:center}.portrait{border-radius:30px;overflow:hidden;max-height:610px;background:var(--surface-2)}.portrait img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .about-copy p{color:var(--muted);font-size:1.06rem}.about-copy .signature{color:var(--text);font-weight:700;margin-top:26px}
+    .expertise{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}.pill{padding:9px 13px;border:1px solid var(--line);border-radius:999px;font-size:.82rem;color:var(--muted);background:var(--surface)}
+    .quote{margin-top:36px;padding:22px 0 0;border-top:1px solid var(--line);font-size:1.25rem;line-height:1.35;letter-spacing:-.025em;color:var(--text)}
+    .cta{padding:120px 0}.cta-box{padding:clamp(42px,8vw,86px);border-radius:36px;background:linear-gradient(135deg,#16121f,#0b0910);color:white;position:relative;overflow:hidden}.cta-box:before{content:"";position:absolute;width:380px;height:380px;right:-100px;top:-160px;border-radius:50%;background:var(--accent);filter:blur(110px);opacity:.35}.cta-box>*{position:relative;z-index:1}.cta-box h2{max-width:800px}.cta-box p{max-width:620px;color:#bdb6c7;font-size:1.08rem;margin:22px 0 30px}
+    footer{padding:38px 0 54px;border-top:1px solid var(--line)}.footer-grid{display:flex;justify-content:space-between;gap:28px;align-items:flex-end}.footer-name{font-weight:800;letter-spacing:-.035em}.footer-meta{color:var(--muted);font-size:.86rem;margin-top:4px}.footer-links{display:flex;gap:20px;color:var(--muted);font-size:.88rem}.footer-links a:hover{color:var(--text)}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:900px){.nav-links{display:none}.hero{min-height:auto;padding-top:122px}.hero-grid,.statement-grid,.about-grid{grid-template-columns:1fr}.hero-grid{gap:42px}.visual{min-height:510px}.statement-grid{gap:26px}.loss-grid{grid-template-columns:1fr}.step{grid-template-columns:50px 1fr}.step p{grid-column:2}.about-grid{gap:40px}.portrait{max-height:620px}.results{grid-template-columns:1fr}}
+    @media(max-width:600px){.container{width:min(100% - 28px,var(--max))}.nav-inner{height:66px}.nav .btn{display:none}.hero{padding:108px 0 58px}h1{font-size:clamp(3.25rem,16vw,4.6rem)}.lead{font-size:1rem}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}.visual{min-height:430px;border-radius:27px}.section,.cta{padding:84px 0}.section-tight{padding:70px 0}.results{margin-top:38px}.result{min-height:205px;padding:28px}.step{padding:26px 0;gap:16px}.cta-box{border-radius:28px}.footer-grid{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
   </style>
 </head>
 <body>
-  <nav class="nav" aria-label="Navegación principal">
+  <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">Laura Rodriguez<span>.</span></a>
-
-      <div class="nav-links">
-        <a href="#servicios">Servicios</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#sobre-mi">Sobre Laura</a>
-        <a href="https://www.linkedin.com/in/laurarodriguez20/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <div class="nav-actions">
-          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar modo de color" title="Cambiar modo de color">
-            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <path d="M20.5 14.2A8.3 8.3 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/>
-            </svg>
-            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
-            </svg>
-          </button>
-          <a class="btn btn-primary whatsapp-link" href="#">Solicitar diagnóstico</a>
-        </div>
+      <a class="brand" href="#inicio">Laura Rodriguez<i>.</i></a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#problema">El problema</a><a href="#resultados">Resultados</a><a href="#proceso">Proceso</a><a href="#sobre-mi">Sobre mí</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme" aria-label="Cambiar tema" id="themeToggle">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a class="btn btn-primary" href="https://wa.me/50764294221?text=Hola%20Laura%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio." target="_blank" rel="noopener">Diagnóstico gratuito</a>
       </div>
     </div>
-  </nav>
+  </header>
 
   <main>
     <section class="hero" id="inicio">
       <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Growth Strategist · AI · Automation · Marketing</div>
-          <h1>Convierte más consultas en clientes.</h1>
-          <p class="hero-copy">Ayudo a empresas de servicios a responder más rápido, dar mejor seguimiento y aprovechar cada oportunidad que llega por Instagram, WhatsApp y su página web.</p>
+        <div class="reveal">
+          <div class="kicker">Growth Strategist · Panamá</div>
+          <h1>Convierte más conversaciones en <span>clientes.</span></h1>
+          <p class="lead">Ayudo a empresas de servicios a responder más rápido, dar seguimiento a cada oportunidad y convertir más conversaciones en ventas utilizando estrategia, inteligencia artificial y automatización.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary whatsapp-link" href="#">Descubrir dónde estás perdiendo clientes</a>
+            <a class="btn btn-primary" href="https://wa.me/50764294221?text=Hola%20Laura%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio." target="_blank" rel="noopener">Solicitar diagnóstico gratuito <span>↗</span></a>
+            <a class="btn btn-outline" href="#proceso">Ver cómo funciona</a>
           </div>
-          <p class="hero-detail">Analizo cómo llegan tus consultas, cómo las atiende tu equipo y qué sucede después. Luego implemento mejoras prácticas para ayudarte a cerrar más ventas sin complicar tu operación.</p>
+          <p class="micro">Una conversación estratégica. Sin compromiso y sin presentaciones genéricas.</p>
         </div>
-
-        <aside class="automation-card" aria-label="Sistema visual de seguimiento de consultas y clientes">
-          <div class="automation-label">Estrategia + automatización</div>
-          <div class="flow-panel">
-            <small>Una ruta más clara para cada oportunidad</small>
-            <div class="flow-steps" aria-label="Consulta, respuesta, seguimiento, cita y cliente">
-              <span class="flow-step">Consulta</span>
-              <span class="flow-arrow">→</span>
-              <span class="flow-step">Respuesta</span>
-              <span class="flow-arrow">→</span>
-              <span class="flow-step">Seguimiento</span>
-              <span class="flow-arrow">→</span>
-              <span class="flow-step">Cita</span>
-              <span class="flow-arrow">→</span>
-              <span class="flow-step">Cliente</span>
-            </div>
-          </div>
-        </aside>
+        <div class="visual reveal">
+          <img src="automation-hero.png" alt="Sistema visual de crecimiento, seguimiento y automatización">
+          <div class="visual-tag">Strategy · AI · Automation</div>
+          <div class="visual-copy"><strong>Más oportunidades atendidas. Menos clientes olvidados.</strong><small>Sistemas diseñados alrededor de tu operación.</small></div>
+        </div>
       </div>
     </section>
 
-    <section class="problems">
+    <section class="statement section" id="problema">
       <div class="container">
-        <div class="section-kicker">El verdadero problema</div>
-        <h2 class="section-title">Más consultas no siempre significan más ventas.</h2>
-        <p class="section-intro">La oportunidad puede perderse después del primer mensaje: respuestas tardías, seguimiento inconsistente, información dispersa y tareas manuales que consumen el tiempo del equipo.</p>
-
-        <div class="problem-grid">
-          <article class="problem-card">
-            <span>01</span>
-            <h3>Consultas sin seguimiento</h3>
-            <p>Personas interesadas dejan de responder porque nadie retoma la conversación a tiempo.</p>
-          </article>
-          <article class="problem-card">
-            <span>02</span>
-            <h3>Demasiado trabajo manual</h3>
-            <p>El equipo repite tareas, busca información y responde lo mismo una y otra vez.</p>
-          </article>
-          <article class="problem-card">
-            <span>03</span>
-            <h3>Canales desconectados</h3>
-            <p>Instagram, WhatsApp, la página web y ventas funcionan por separado, sin una ruta clara.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicios">
-      <div class="container">
-        <div class="section-kicker">Qué puedo construir contigo</div>
-        <h2 class="section-title">Mejor atención, seguimiento y conversión.</h2>
-        <p class="section-intro">Cada proyecto comienza con un problema específico. Primero identificamos dónde se pierden las oportunidades y después implementamos una solución práctica para tu operación.</p>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <small>01 / Diagnóstico</small>
-            <h3>Estrategia de crecimiento</h3>
-            <p>Reviso cómo llegan las consultas, cómo las atiende el equipo y qué cambios pueden producir mayor impacto.</p>
-          </article>
-          <article class="service-card">
-            <small>02 / Atención</small>
-            <h3>Respuesta y seguimiento</h3>
-            <p>Diseño mensajes, pasos y recordatorios para que cada persona interesada reciba una atención clara y oportuna.</p>
-          </article>
-          <article class="service-card">
-            <small>03 / Eficiencia</small>
-            <h3>Automatización de tareas</h3>
-            <p>Conecto herramientas y automatizo tareas repetitivas para reducir trabajo manual sin complicar al equipo.</p>
-          </article>
-          <article class="service-card">
-            <small>04 / Conversión</small>
-            <h3>Marketing que guía a la acción</h3>
-            <p>Creo páginas, mensajes y campañas que ayudan al cliente a entender el siguiente paso y tomar una decisión.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="proceso">
-      <div class="container process-wrap">
-        <div class="section-kicker">Proceso</div>
-        <h2 class="section-title">De una operación confusa a un proceso claro.</h2>
-        <div class="process-grid">
-          <div class="step"><b>01</b><h3>Revisión</h3><p>Analizamos cómo llegan, se responden y se siguen las consultas.</p></div>
-          <div class="step"><b>02</b><h3>Prioridades</h3><p>Elegimos los cambios más útiles y realistas para tu empresa.</p></div>
-          <div class="step"><b>03</b><h3>Implementación</h3><p>Construimos los mensajes, páginas, flujos y automatizaciones.</p></div>
-          <div class="step"><b>04</b><h3>Mejora</h3><p>Medimos lo que funciona, documentamos y hacemos ajustes.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="sobre-mi">
-      <div class="container offer">
-        <article class="offer-card">
+        <div class="statement-grid reveal">
+          <div class="label">La realidad</div>
           <div>
-            <span class="tag">SERVICIO INICIAL</span>
-            <h3>Diagnóstico de crecimiento</h3>
-            <p>Una revisión ejecutiva para descubrir dónde se están perdiendo oportunidades y qué conviene mejorar primero.</p>
-            <div class="offer-list">
-              <div>Revisión de Instagram, WhatsApp y página web</div>
-              <div>Análisis de respuesta y seguimiento</div>
-              <div>Identificación de oportunidades perdidas</div>
-              <div>Plan de acción priorizado</div>
-            </div>
+            <h2>La mayoría de las empresas no necesita más marketing.</h2>
+            <p>Necesita dejar de perder las oportunidades que ya genera. Cuando una consulta tarda en responderse, no recibe seguimiento o queda dispersa entre Instagram, WhatsApp y una hoja de cálculo, el problema no es la demanda. Es el sistema.</p>
           </div>
-          <a class="btn btn-primary whatsapp-link" href="#">Quiero mi diagnóstico</a>
-        </article>
-
-        <article class="about-card">
-          <img class="about-photo" src="laura-rodriguez-profile.png" alt="Laura Rodriguez, estratega de crecimiento" loading="lazy">
-          <div class="about-content">
-            <h3>Sobre Laura</h3>
-            <p>Soy estratega de crecimiento especializada en conectar creatividad, marketing, inteligencia artificial y automatización.</p>
-            <p>Trabajo con empresas que ya tienen una operación en marcha, pero necesitan ordenar sus procesos, aprovechar mejor sus oportunidades y construir sistemas que puedan escalar.</p>
-            <p><strong>Mi enfoque:</strong> menos acciones aisladas, más claridad, estructura y ejecución.</p>
-
-            <div class="about-links">
-              <a class="about-link" href="https://www.linkedin.com/in/laurarodriguez20/" target="_blank" rel="noopener noreferrer" aria-label="Visitar LinkedIn de Laura Rodriguez">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.2 3.7a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2ZM3.4 9.4H7v11.1H3.4V9.4Zm5.8 0h3.5v1.5h.1c.5-.9 1.7-1.9 3.6-1.9 3.8 0 4.5 2.5 4.5 5.8v5.7h-3.6v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7v5.2H9.2V9.4Z"/></svg>
-                LinkedIn
-              </a>
-              <a class="about-link whatsapp-link" href="#" aria-label="Escribir a Laura por WhatsApp">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.9L2 22l5.2-1.6A10 10 0 1 0 12 2Zm0 17.8a7.8 7.8 0 0 1-4-1.1l-.3-.2-3.1 1 1-3-.2-.3A7.8 7.8 0 1 1 12 19.8Zm4.3-5.8c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.4 6.4 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.5.3-.4c.1-.2 0-.4 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.4-.6 1.6-1.1.2-.6.2-1 .2-1.1-.1-.1-.3-.2-.5-.3Z"/></svg>
-                WhatsApp
-              </a>
-            </div>
-          </div>
-        </article>
+        </div>
+        <div class="loss-grid reveal">
+          <article class="loss-card"><b>Respuestas tardías</b><p>El interés disminuye mientras el cliente espera y termina hablando con otra empresa.</p></article>
+          <article class="loss-card"><b>Seguimiento inconsistente</b><p>Las oportunidades dependen de la memoria del equipo y no de un proceso claro.</p></article>
+          <article class="loss-card"><b>Información dispersa</b><p>Conversaciones, datos y próximas acciones viven en lugares distintos.</p></article>
+        </div>
       </div>
     </section>
 
-    <section class="contact">
-      <div class="container contact-box">
-        <div>
-          <h2>¿Dónde está perdiendo clientes tu empresa?</h2>
-          <p>Conversemos durante 15 minutos. Revisaremos tu situación actual y te indicaré qué oportunidades considero prioritarias.</p>
+    <section class="section" id="resultados">
+      <div class="container">
+        <div class="intro reveal">
+          <div class="label">Lo que cambia</div>
+          <h2>Resultados que se sienten en la operación.</h2>
+          <p>No implemento tecnología por implementar. Diseño sistemas simples para que tu equipo trabaje mejor y cada oportunidad tenga una próxima acción.</p>
         </div>
-        <a class="btn whatsapp-link" href="#">Hablar con Laura</a>
+        <div class="results">
+          <article class="result reveal"><span class="num">01</span><div><h3>Consigue más citas.</h3><p>Convierte el interés inicial en una acción concreta y medible.</p></div></article>
+          <article class="result reveal"><span class="num">02</span><div><h3>Responde más rápido.</h3><p>Reduce tiempos de espera sin convertir tu atención en algo impersonal.</p></div></article>
+          <article class="result reveal"><span class="num">03</span><div><h3>Recupera oportunidades.</h3><p>Vuelve a contactar a quienes preguntaron, pero todavía no tomaron una decisión.</p></div></article>
+          <article class="result reveal"><span class="num">04</span><div><h3>Elimina tareas repetitivas.</h3><p>Automatiza lo predecible para que tu equipo se enfoque en vender y atender.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process section" id="proceso">
+      <div class="container">
+        <div class="intro reveal"><div class="label">Cómo trabajaremos</div><h2>De la fuga al sistema.</h2><p>Un proceso claro, sin complejidad innecesaria y adaptado a la realidad de tu negocio.</p></div>
+        <div class="steps">
+          <div class="step reveal"><div class="step-no">01</div><h3>Analizamos tu proceso</h3><p>Reviso cómo llegan las consultas, quién responde, cuánto tarda el equipo y qué sucede después.</p></div>
+          <div class="step reveal"><div class="step-no">02</div><h3>Encontramos las pérdidas</h3><p>Identifico puntos de fricción, oportunidades olvidadas y tareas que frenan el crecimiento.</p></div>
+          <div class="step reveal"><div class="step-no">03</div><h3>Implementamos mejoras</h3><p>Construyo el flujo, los mensajes, las automatizaciones y las herramientas que realmente necesitas.</p></div>
+          <div class="step reveal"><div class="step-no">04</div><h3>Medimos y optimizamos</h3><p>Validamos qué funciona, corregimos lo necesario y dejamos un sistema que tu equipo puede utilizar.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre-mi">
+      <div class="container about-grid">
+        <div class="portrait reveal"><img src="laura-rodriguez-profile.png" alt="Laura Rodriguez, Growth Strategist"></div>
+        <div class="about-copy reveal">
+          <div class="label">Sobre Laura</div>
+          <h2>Estrategia antes que herramientas.</h2>
+          <p>Durante años he trabajado diseñando estrategias, automatizaciones y procesos para ayudar a empresas a crecer de forma más inteligente.</p>
+          <p>Con el tiempo descubrí que la mayoría de los negocios no tiene un problema de marketing. Tiene un problema de seguimiento, de procesos y de sistemas.</p>
+          <p>Hoy ayudo a empresas que reciben consultas por Instagram, WhatsApp y su página web a convertir más oportunidades en clientes mediante estrategia, inteligencia artificial y automatización.</p>
+          <div class="expertise" aria-label="Áreas de experiencia"><span class="pill">Estrategia comercial</span><span class="pill">Automatización</span><span class="pill">Inteligencia artificial</span><span class="pill">Marketing</span><span class="pill">Generación de oportunidades</span><span class="pill">Procesos comerciales</span></div>
+          <p class="quote">“No vendo herramientas. Diseño sistemas que ayudan a empresas a crecer.”</p>
+          <div class="hero-actions"><a class="btn btn-outline" href="https://www.linkedin.com/in/laurarodriguez20/" target="_blank" rel="noopener">Ver LinkedIn ↗</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacto">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div class="label">Diagnóstico inicial</div>
+          <h2>Descubramos dónde estás perdiendo clientes.</h2>
+          <p>Cuéntame cómo llegan y se atienden tus consultas. Revisaremos tu proceso y te mostraré las mejoras con mayor impacto para tu negocio.</p>
+          <a class="btn btn-primary" href="https://wa.me/50764294221?text=Hola%20Laura%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio." target="_blank" rel="noopener">Hablar con Laura por WhatsApp ↗</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Laura Rodriguez.</span>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/laurarodriguez20/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="whatsapp-link" href="#">WhatsApp: +507 6429-4221</a>
-      </div>
+    <div class="container footer-grid">
+      <div><div class="footer-name">Laura Rodriguez</div><div class="footer-meta">Growth Strategist · Panamá<br>AI · Automation · Marketing</div></div>
+      <div class="footer-links"><a href="https://www.linkedin.com/in/laurarodriguez20/" target="_blank" rel="noopener">LinkedIn</a><a href="https://wa.me/50764294221" target="_blank" rel="noopener">WhatsApp</a><span>© 2026</span></div>
     </div>
   </footer>
 
   <script>
-    const CONFIG = {
-      whatsappNumber: "50764294221",
-      whatsappMessage: "Hola Laura, me interesa descubrir dónde mi empresa puede estar perdiendo clientes."
-    };
-
-    const whatsappURL = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(CONFIG.whatsappMessage)}`;
-    document.querySelectorAll('.whatsapp-link').forEach(link => {
-      link.href = whatsappURL;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
+    const toggle=document.getElementById('themeToggle');
+    toggle.addEventListener('click',()=>{
+      const current=document.documentElement.dataset.theme;
+      const systemDark=matchMedia('(prefers-color-scheme: dark)').matches;
+      const next=current? (current==='dark'?'light':'dark') : (systemDark?'light':'dark');
+      document.documentElement.dataset.theme=next;localStorage.setItem('lr-theme',next);
     });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const themeToggle = document.getElementById('themeToggle');
-    const root = document.documentElement;
-
-    function getActiveTheme() {
-      if (root.dataset.theme) return root.dataset.theme;
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-
-    function updateThemeLabel() {
-      const activeTheme = getActiveTheme();
-      themeToggle.setAttribute('aria-label', activeTheme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-      themeToggle.setAttribute('title', activeTheme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-    }
-
-    themeToggle.addEventListener('click', () => {
-      const nextTheme = getActiveTheme() === 'dark' ? 'light' : 'dark';
-      root.dataset.theme = nextTheme;
-      localStorage.setItem('lr-theme', nextTheme);
-      updateThemeLabel();
-    });
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      if (!localStorage.getItem('lr-theme')) updateThemeLabel();
-    });
-
-    updateThemeLabel();
+    const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   </script>
 </body>
 </html>

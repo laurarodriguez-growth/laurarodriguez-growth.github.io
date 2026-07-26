@@ -1,24 +1,16 @@
-LAURA RODRIGUEZ - LANDING PAGE
+LAURA RODRIGUEZ — LANDING PAGE
 
-Archivos incluidos:
+Para actualizar tu web en GitHub Pages:
+1. Entra al repositorio laurarodriguez-growth.github.io
+2. Abre el archivo index.html
+3. Pulsa el icono del lápiz o reemplaza el archivo mediante Add file > Upload files
+4. Sube index.html y las dos imágenes en la raíz del repositorio
+5. Confirma con Commit changes
+
+Archivos necesarios:
 - index.html
-- laura-rodriguez-profile.png
 - automation-hero.png
+- laura-rodriguez-profile.png
 
-La página ya tiene configurados:
-- WhatsApp: +507 6429-4221
-- LinkedIn: https://www.linkedin.com/in/laurarodriguez20/
-- Modo claro y oscuro automático
-- Botón manual para cambiar el modo de color
-- Diseño adaptable para computadora, tableta y celular
-
-PUBLICAR GRATIS EN NETLIFY
-1. Entra a https://app.netlify.com/drop
-2. Arrastra la carpeta completa o el archivo ZIP.
-3. Netlify generará un enlace público.
-
-PUBLICAR GRATIS EN GITHUB PAGES
-1. Crea un repositorio nuevo.
-2. Sube los tres archivos a la raíz del repositorio.
-3. Abre Settings > Pages.
-4. Selecciona Deploy from a branch y la rama main.
+URL pública:
+https://laurarodriguez-growth.github.io/
