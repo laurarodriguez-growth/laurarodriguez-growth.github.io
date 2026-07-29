@@ -1,32 +1,23 @@
-REDISEÑO WEB LAURA — V2
+HOTFIX DE SUBPÁGINAS — NO CAMBIA EL NUEVO HOME
 
-QUÉ SUBIR A LA RAÍZ DEL REPOSITORIO:
-1. index.html
-2. styles.css
-3. script.js
-4. la carpeta assets completa
+El problema ocurrió porque el nuevo styles.css de la portada reemplazó el CSS que usaban las páginas antiguas de Recursos y Diagnóstico.
 
-NO BORRES:
-- diagnostico-de-conversion/
-- recursos/
-- aura-os/
-- robots.txt
-- sitemap.xml
-- laura-rodriguez-profile.webp
-- og-image.jpg
+SUBE ESTOS 4 ELEMENTOS A LA RAÍZ DEL REPOSITORIO:
 
-PASOS EN GITHUB:
-1. Entra al repositorio laurarodriguez-growth.github.io.
-2. Add file > Upload files.
-3. Arrastra index.html, styles.css, script.js y la carpeta assets.
-4. Acepta reemplazar los tres archivos existentes.
-5. Commit message: "Rediseño editorial Growth by Laura v2".
-6. Commit changes.
-7. Espera 1–3 minutos y abre la web en incógnito.
+1. legacy-pages.css
+2. legacy-pages.js
+3. diagnostico-de-conversion/  (reemplaza su index.html)
+4. recursos/                   (reemplaza el index.html del artículo)
 
-IMPORTANTE:
-El rediseño usa la foto existente llamada laura-rodriguez-profile.webp.
-No la reemplaza.
+NO reemplaces:
+- index.html de la raíz
+- styles.css
+- script.js
+- assets/
 
-Si el enlace de Instagram cambia, busca en index.html:
-https://www.instagram.com/growthbylaura/
+En GitHub:
+Add file > Upload files
+Arrastra los cuatro elementos de esta carpeta.
+Commit message: Fix estilos de diagnóstico y recursos
+
+Después espera 1–3 minutos y recarga con Ctrl+F5 o en incógnito.
