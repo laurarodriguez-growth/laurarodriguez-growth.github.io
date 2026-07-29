@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://laurarodriguez-growth.github.io/sitemap.xml
