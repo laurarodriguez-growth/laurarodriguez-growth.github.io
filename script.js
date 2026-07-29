@@ -1,14 +1,24 @@
-(() => {
-  const root = document.documentElement;
-  const saved = localStorage.getItem('laura-theme');
-  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-  root.dataset.theme = saved || (prefersLight ? 'light' : 'dark');
-  const btn = document.querySelector('[data-theme-toggle]');
-  const sync = () => { if(btn) btn.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro'); };
-  sync();
-  btn?.addEventListener('click', () => {
-    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('laura-theme', root.dataset.theme);
-    sync();
+const header = document.querySelector('[data-header]');
+const toggle = document.querySelector('[data-menu-toggle]');
+const nav = document.querySelector('[data-nav]');
+
+const updateHeader = () => {
+  header?.classList.toggle('scrolled', window.scrollY > 24);
+};
+
+updateHeader();
+window.addEventListener('scroll', updateHeader, { passive: true });
+
+toggle?.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', String(open));
+  document.body.classList.toggle('menu-open', open);
+});
+
+nav?.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle?.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
   });
-})();
+});
