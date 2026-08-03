@@ -25,3 +25,23 @@ section{padding:95px 0}.section-kicker{margin-bottom:12px;color:var(--accent2);f
 .mobile-social{display:none;position:fixed;right:16px;bottom:16px;z-index:45;width:54px;height:54px;border-radius:17px;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;box-shadow:0 15px 35px rgba(0,0,0,.35);place-items:center;font-weight:900}
 @media(max-width:900px){.nav-links{display:none}.hero,.offer{grid-template-columns:1fr}.hero{padding-top:58px}.portrait{max-width:560px}.grid-3{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr 1fr}.social-btn span{display:none}.mobile-social{display:grid}}
 @media(max-width:620px){.shell{width:min(calc(100% - 28px),var(--max))}.hero h1,.page-hero h1{font-size:45px}.section-title{font-size:38px}.grid-2,.grid-3,.flow{grid-template-columns:1fr}.card{padding:22px}.cta{padding:30px 23px}.footer-row{align-items:flex-start;flex-direction:column}.nav .btn{display:none}.portrait{border-radius:25px}.article p,.article li{font-size:17px}}
+
+
+/* Marca oficial Growth by Laura */
+.brand-signature{flex:0 0 auto}
+.brand-logo{width:clamp(150px,16vw,205px);height:auto}
+.brand-logo-on-light{display:none}
+html[data-theme="light"] .brand-logo-on-dark{display:none}
+html[data-theme="light"] .brand-logo-on-light{display:block}
+.footer-brand-lockup{display:grid;gap:7px}
+.footer-brand-logo{width:190px;height:auto}
+.footer-brand-logo-on-light{display:none}
+html[data-theme="light"] .footer-brand-logo-on-dark{display:none}
+html[data-theme="light"] .footer-brand-logo-on-light{display:block}
+.offer-next-step{display:grid;align-content:center;gap:14px}
+.offer-next-step h3{margin:0;font-size:clamp(28px,3.2vw,43px);line-height:1.08;letter-spacing:-.04em}
+.offer-next-step p{margin:0;color:var(--muted);font-size:17px}
+@media(max-width:620px){
+  .brand-logo{width:146px}
+  .footer-brand-logo{width:174px}
+}

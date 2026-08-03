@@ -1,0 +1,34 @@
+GROWTH BY LAURA · FIX DE MARCA Y PRECIO
+
+Cambios realizados
+- Se eliminó el precio visible del Diagnóstico de Conversión Premium.
+- Se eliminaron las menciones a “Tarifa de lanzamiento”, “$150” y “USD · pago único”.
+- Se eliminó el precio del JSON-LD y de las respuestas FAQ estructuradas.
+- El bloque de precio de la portada ahora guía a una revisión inicial.
+- Se implementó el monograma/firma oficial de Growth by Laura en:
+  - cabecera de la página principal;
+  - pie de página principal;
+  - página del Diagnóstico de Conversión;
+  - formulario de revisión inicial;
+  - página de recursos.
+- Se usan las variantes oficiales según el fondo:
+  - morado + blanco en fondos oscuros;
+  - morado + texto oscuro en fondos claros.
+- Se crearon favicon y Apple Touch Icon a partir del monograma oficial.
+- No se inventó ni rediseñó ningún logo.
+
+Instalación
+1. Descomprime este ZIP.
+2. Sube el contenido de la carpeta laurarodriguez-growth.github.io-main a la raíz del repositorio correcto.
+3. Reemplaza los archivos existentes.
+4. Espera a que GitHub Pages termine de desplegar.
+5. Recarga el sitio con Ctrl + Shift + R.
+
+Archivos principales modificados
+- index.html
+- styles.css
+- legacy-pages.css
+- diagnostico.html
+- diagnostico-de-conversion/index.html
+- recursos/analisis-12-conversaciones-comerciales/index.html
+- assets/brand/*
